@@ -3,7 +3,7 @@ import asyncComponent from '../../helpers/asyncComponent';
 
 
 class HomeSys extends React.Component {
-  constructor() { super(); }
+  constructor(...props: any[]) { super(props); }
   componentDidMount() {
     console.log("base Home component mounted");
   }

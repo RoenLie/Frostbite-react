@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const asyncComponent = (importComponent, Base) => {
+const asyncComponent = (importComponent: any, Base: any) => {
   return class extends Base {
     state = {
       component: null
@@ -8,17 +8,17 @@ const asyncComponent = (importComponent, Base) => {
 
     componentDidMount() {
       importComponent()
-        .then(cmp => {
-            this.setState({component: cmp.default});
+        .then((cmp: any) => {
+          this.setState({ component: cmp.default });
         });
     }
 
     render() {
-      const C = this.state.component;
+      const C: any = this.state.component;
 
       console.log(C);
-      
-      return C ? <C {...this.props}/> : null;
+
+      return C ? <C {...this.props} /> : null;
     }
   }
 };
